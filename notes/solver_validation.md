@@ -14,8 +14,10 @@ config `config/multi/config_2D.yaml`; launched by `run_DarcyFlow2D.sh`.
   condition imposed at the ghost-cell centre, h outside the edge cell (not on the wall).
 - Face coefficient: arithmetic mean of neighbouring cells; coefficient ghosts copy the edge.
 - Permeability: sum of 5 random Gaussians thresholded at the mean -> {1.0, 0.1}.
-- The dataset file's `tensor` holds a single time frame; that it is the final frame
-  (t = 2) is inferred from the residual analysis below, not stated in the code we read.
+- The dataset file's `tensor` holds a single time frame. **It is the t = 1.75 snapshot,
+  not t = 2.0** (correction; an earlier version of this note guessed the final frame).
+  `Data_Merge.py` stores `test[:batch, -2]` for 2D data; index -1 is the state at t = 2.0,
+  index -2 the save at t = 1.75. Checked against the data in `notes/research_label_noise.md`.
 
 ## Our solver (`darcy/solver.py`)
 
