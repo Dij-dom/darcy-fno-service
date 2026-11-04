@@ -21,6 +21,8 @@ fsspec==2026.9.0
     # via torch
 h5py==3.16.0
     # via -r requirements.in
+iniconfig==2.3.1
+    # via pytest
 jinja2==3.1.6
     # via torch
 kiwisolver==1.5.1
@@ -82,11 +84,19 @@ nvidia-nvshmem-cu13==3.4.5
 nvidia-nvtx==13.0.85
     # via cuda-toolkit
 packaging==26.3
-    # via matplotlib
+    # via
+    #   matplotlib
+    #   pytest
 pillow==13.0.0
     # via matplotlib
+pluggy==1.7.0
+    # via pytest
+pygments==2.21.0
+    # via pytest
 pyparsing==3.3.3
     # via matplotlib
+pytest==9.2.0
+    # via -r requirements.in
 python-dateutil==4.0.0
     # via matplotlib
 scipy==1.18.1

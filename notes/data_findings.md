@@ -34,7 +34,12 @@ Measured by `scripts/inspect_data.py` (raw output in `notes/data_inspection.md`)
   predict. That puts a floor under any model's test error and affects comparisons with
   our finite-difference solver (CP1) and with published numbers.
 
-## To verify in CP1
+**Correction (CP1):** the comparison above with 0.737 was misleading. Under PDEBench's
+own discretisation the converged constant-0.1 maximum is 0.7482 (see
+`notes/solver_validation.md`). The 0.743 sample lies *below* it (its random initial
+condition started below steady state); it is not the "cleanest" sample.
+
+## To verify in CP1 (done, see `notes/solver_validation.md`)
 
 1. Run our FD solver on the constant-0.1 input; check its max against 0.743 and 0.737.
 2. Measure FD vs dataset error over all samples, and project the residual onto
