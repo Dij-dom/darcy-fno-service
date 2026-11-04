@@ -1,0 +1,9 @@
+# Top-level dependencies for training/evaluation (local GPU machine).
+# Regenerate the pinned lock with:
+#   uv pip compile requirements.in -o requirements.txt --python-version 3.12 --index-strategy unsafe-best-match --emit-index-url
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.14.1+cu130
+numpy
+scipy
+h5py
+matplotlib
